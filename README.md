@@ -570,28 +570,15 @@ FunctionEnd
 
 方式2：使用InnoSetup方式
 
-生成环境成熟方案：
-
-1、保留用户生成的数据
-2、增量和全量更新机制
-
-报告系统的iss脚本大概流程：
-
-![alt text](images/流程.png)
-
 支持独立的合并系统安装包：
 
 1、本地数据库的适配（客户数据库不一致，需要单独部署）；
     a)独立的实例
     b)安装时在Config.ini或db-config.json中初始化写入数据库信息。
-2、继续保持云端的ORCLE数据库支持；（不用变）
-3、projectData等文件目录从报告系统脱离
+2、用户数据目录目录
     a)平台端代码层，appPath基础目录的修改
 4、打包方式走Innosetup的方式
     a)iss脚本的编写
 5、office加载项是否需要支持独立的版本 
-    a)UFCPAS4Office
-    b)vstor_redist
-    c)cpas-report-office-addin.msi
 基于1和5的实现
 6、5设计的时候能否，支持安装2个包呢。比如合并系统测试版和正式版。比如谷歌浏览器可以安装正式版和开发版dev，dev版体验新的功能。
